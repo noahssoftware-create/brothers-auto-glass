@@ -126,6 +126,77 @@ footer{background:#0a0a0a;padding:72px 64px 32px;}
 #dm-toggle{position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;background:rgba(15,15,15,.9);color:#666;border:1px solid rgba(255,255,255,.08);cursor:pointer;transition:all .2s;border-radius:20px;backdrop-filter:blur(8px);}
 #dm-toggle:hover{color:#ccc;border-color:rgba(255,255,255,.2);}
 
+/* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:3px solid #e8650a;z-index:98;box-shadow:0 8px 32px rgba(0,0,0,.12);}
+.mobile-nav.open{display:block;}
+.mobile-nav ul{list-style:none;padding:8px 0;}
+.mobile-nav ul li{border-bottom:1px solid #f2f2f2;}
+.mobile-nav ul a{display:block;padding:17px 24px;font-size:16px;font-weight:500;color:#333;transition:color .2s;}
+.mobile-nav ul a:hover,.mobile-nav ul a.fleet-link,.mobile-nav ul a.active{color:#e8650a;font-weight:600;}
+.mobile-nav-cta{display:block;margin:16px 24px 24px;background:#e8650a;color:#fff;padding:15px 24px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border:none;border-radius:5px;cursor:pointer;width:calc(100% - 48px);text-align:center;}
+
+/* ── TABLET ── */
+@media(max-width:1024px){
+  .top-bar{padding:8px 32px;}
+  nav{padding:0 32px;}
+  .hero{padding:0 32px;}
+  .hero h1{font-size:52px;}
+  .sec{padding:72px 32px;}
+  .pricing-grid{grid-template-columns:1fr 1fr;}
+  .steps{grid-template-columns:1fr 1fr;border-left:none;}
+  .step{border-left:1px solid #ebebeb;}
+  .types-grid{grid-template-columns:repeat(2,1fr);}
+  .fleet-cta{padding:64px 32px;}
+  footer{padding:56px 32px 28px;}
+  .ft-top{grid-template-columns:1fr 1fr;gap:40px;}
+}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .top-bar{display:none;}
+  nav{padding:0 20px;height:64px;}
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .nav-logo img{height:36px;}
+  .nav-logo-text .logo-sub{display:none;}
+  .nav-logo-text .logo-name{font-size:16px;}
+  .hero{padding:0 20px;min-height:70vh;}
+  .hero-bg-mark{display:none;}
+  .hero-inner{padding:72px 0 52px;max-width:100%;}
+  .hero h1{font-size:42px;letter-spacing:-1px;}
+  .hero-sub{font-size:14px;margin-bottom:28px;}
+  .btn-primary{font-size:16px;padding:15px 20px;}
+  .btn-ghost{display:none;}
+  .intro-strip{padding:18px 20px;flex-direction:column;gap:12px;}
+  .sec{padding:52px 20px;}
+  .sec-title{font-size:32px;}
+  .sec-desc{font-size:14px;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .pr-card{padding:36px 24px;}
+  .pr-num{font-size:52px;}
+  .steps{grid-template-columns:1fr;border-left:none;}
+  .step{border-left:none;border-bottom:1px solid #ebebeb;padding:28px 0;}
+  .step:last-child{border-bottom:none;}
+  .types-grid{grid-template-columns:1fr;}
+  .fleet-cta{padding:52px 20px;flex-direction:column;align-items:flex-start;gap:28px;}
+  .fleet-cta-left h2{font-size:34px;}
+  .cta-group{width:100%;align-items:flex-start;}
+  .btn-orange{width:100%;text-align:center;}
+  footer{padding:48px 20px 24px;}
+  .ft-top{grid-template-columns:1fr;gap:32px;}
+  .ft-bottom{flex-direction:column;gap:10px;text-align:center;}
+}
+
+body.dark .mobile-nav{background:#141414;border-bottom-color:#e8650a;}
+body.dark .mobile-nav ul li{border-color:#222;}
+body.dark .mobile-nav ul a{color:#aaa;}
+body.dark .hamburger span{background:#d8d8d8;}
+
 /* ── DARK MODE ── */
 body.dark{background:#141414;color:#c8c8c8;}
 body.dark nav{background:#141414;border-bottom-color:#222;}
@@ -179,7 +250,20 @@ body.dark .type-desc{color:#555;}
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="window.location.href='contact.html'">(480) 271-2014</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-nav" id="mobile-nav">
+  <ul>
+    <li><a href="index.html#services" onclick="closeMenu()">Services</a></li>
+    <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+    <li><a href="index.html#reviews" onclick="closeMenu()">Reviews</a></li>
+    <li><a href="fleet.html" class="active fleet-link" onclick="closeMenu()">Fleet</a></li>
+    <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <button class="mobile-nav-cta" onclick="window.location.href='contact.html'">(480) 271-2014 — Call Now</button>
+</div>
 
 <section class="hero">
   <img class="hero-bg-mark" src="Logo Icon Vector.svg" alt="">
@@ -369,6 +453,14 @@ function toggleDark(){
   const on = document.body.classList.toggle('dark');
   document.getElementById('dm-toggle').textContent = on ? '○ Light Mode' : '◑ Dark Mode';
   localStorage.setItem('darkMode', on ? 'on' : 'off');
+}
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-nav').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobile-nav').classList.remove('open');
 }
 </script>
 </body>
