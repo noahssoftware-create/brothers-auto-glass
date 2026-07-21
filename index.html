@@ -175,7 +175,9 @@ footer{background:#0a0a0a;padding:72px 64px 32px;}
 .mobile-nav ul li{border-bottom:1px solid #f2f2f2;}
 .mobile-nav ul a{display:block;padding:17px 24px;font-size:16px;font-weight:500;color:#333;transition:color .2s;}
 .mobile-nav ul a:hover,.mobile-nav ul a.fleet-link{color:#e8650a;font-weight:600;}
-.mobile-nav-cta{display:block;margin:16px 24px 24px;background:#e8650a;color:#fff;padding:15px 24px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border:none;border-radius:5px;cursor:pointer;width:calc(100% - 48px);text-align:center;}
+.mobile-nav-cta{display:block;margin:16px 24px 8px;background:#e8650a;color:#fff;padding:15px 24px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border:none;border-radius:5px;cursor:pointer;width:calc(100% - 48px);text-align:center;}
+.mobile-dm{display:block;margin:0 24px 20px;background:none;color:#999;padding:12px 0;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border:none;border-top:1px solid #f0f0f0;cursor:pointer;width:calc(100% - 48px);text-align:center;transition:color .2s;}
+.mobile-dm:hover{color:#1a1a1a;}
 
 /* ── TABLET ── */
 @media(max-width:1024px){
@@ -220,6 +222,7 @@ footer{background:#0a0a0a;padding:72px 64px 32px;}
   .hero-stat:first-child{border-left:none;}
   .hero-stat-n{font-size:30px;}
   .hero-stat-l{font-size:9px;letter-spacing:1.5px;}
+  #dm-toggle{display:none;}
   .trust-strip{padding:14px 20px;flex-direction:column;align-items:flex-start;gap:10px;}
   .sec{padding:52px 20px;}
   .sec-title{font-size:32px;}
@@ -275,6 +278,8 @@ body.dark .mobile-nav{background:#141414;border-bottom-color:#e8650a;}
 body.dark .mobile-nav ul li{border-color:#222;}
 body.dark .mobile-nav ul a{color:#aaa;}
 body.dark .hamburger span{background:#d8d8d8;}
+body.dark .mobile-dm{color:#666;border-top-color:#222;}
+body.dark .mobile-dm:hover{color:#aaa;}
 
 </style>
 </head>
@@ -320,6 +325,7 @@ body.dark .hamburger span{background:#d8d8d8;}
     <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
   </ul>
   <button class="mobile-nav-cta" onclick="window.location.href='contact.html'">(480) 271-2014 — Call Now</button>
+  <button class="mobile-dm" id="mobile-dm" onclick="toggleDark()">◑ Dark Mode</button>
 </div>
 
 <!-- HERO -->
@@ -563,12 +569,19 @@ body.dark .hamburger span{background:#d8d8d8;}
   });
   const isDark = localStorage.getItem('darkMode')==='on';
   if(isDark) document.body.classList.add('dark');
+  const label = isDark ? '○ Light Mode' : '◑ Dark Mode';
   const btn = document.getElementById('dm-toggle');
-  if(btn) btn.textContent = isDark ? '○ Light Mode' : '◑ Dark Mode';
+  if(btn) btn.textContent = label;
+  const mbtn = document.getElementById('mobile-dm');
+  if(mbtn) mbtn.textContent = label;
 })();
 function toggleDark(){
   const on = document.body.classList.toggle('dark');
-  document.getElementById('dm-toggle').textContent = on ? '○ Light Mode' : '◑ Dark Mode';
+  const label = on ? '○ Light Mode' : '◑ Dark Mode';
+  const btn = document.getElementById('dm-toggle');
+  if(btn) btn.textContent = label;
+  const mbtn = document.getElementById('mobile-dm');
+  if(mbtn) mbtn.textContent = label;
   localStorage.setItem('darkMode', on ? 'on' : 'off');
 }
 function toggleMenu(){
