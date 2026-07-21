@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Brothers Auto Glass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>if(localStorage.getItem('darkMode')==='on')document.body.classList.add('dark');</script>
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;line-height:1;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+/* ── TOP BAR ── */
+.top-bar{background:#0f0f0f;padding:8px 64px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar-left{font-size:12px;color:#666;letter-spacing:.5px;}
+.top-bar-right{display:flex;gap:28px;align-items:center;}
+.top-bar-right a{font-size:12px;color:#555;letter-spacing:.5px;transition:color .2s;}
+.top-bar-right a:hover{color:#e8650a;}
+.top-bar-right span{color:#333;font-size:10px;}
+
+/* ── NAV ── */
+nav{background:#fff;border-bottom:1px solid #ebebeb;padding:0 64px;display:flex;justify-content:space-between;align-items:center;height:76px;position:sticky;top:0;z-index:100;transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{height:42px;width:auto;}
+.nav-logo-text .logo-name{font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1a1a1a;line-height:1;}
+.nav-logo-text .logo-sub{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#bbb;margin-top:4px;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;color:#777;letter-spacing:.3px;transition:color .2s;padding:4px 0;border-bottom:2px solid transparent;}
+.nav-links a:hover{color:#1a1a1a;border-bottom-color:#e8650a;}
+.nav-links a.fleet-link{color:#e8650a;font-weight:600;}
+.nav-cta{background:#0f0f0f;color:#fff;padding:11px 26px;font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5px;border:none;cursor:default;border-radius:5px;}
+
+/* ── HERO ── */
+.contact-hero{background:#0f0f0f;min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:64px;}
+.hero-bg-mark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70vw;max-width:700px;opacity:.03;filter:invert(1);pointer-events:none;user-select:none;}
+.hero-bg-word{position:absolute;font-family:'Oswald',sans-serif;font-size:clamp(120px,20vw,300px);font-weight:700;color:rgba(255,255,255,.02);line-height:1;letter-spacing:-8px;pointer-events:none;user-select:none;white-space:nowrap;}
+.contact-inner{position:relative;z-index:2;text-align:center;max-width:680px;}
+.contact-eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:28px;}
+.contact-eyebrow span{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#e8650a;font-weight:600;}
+.contact-eyebrow::before,.contact-eyebrow::after{content:'';display:block;width:32px;height:2px;background:#e8650a;}
+.contact-inner h1{font-family:'Oswald',sans-serif;font-size:60px;font-weight:700;text-transform:uppercase;letter-spacing:-1px;color:#fff;margin-bottom:20px;line-height:1.05;}
+.contact-inner p.sub{font-size:16px;color:#666;font-weight:300;line-height:1.85;margin-bottom:52px;max-width:500px;margin-left:auto;margin-right:auto;}
+.phone-display{display:block;font-family:'Oswald',sans-serif;font-size:clamp(52px,8vw,88px);font-weight:700;color:#fff;letter-spacing:-2px;line-height:1;margin-bottom:36px;transition:color .2s;}
+.phone-display:hover{color:#e8650a;}
+.contact-btn{background:#e8650a;color:#fff;padding:18px 56px;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:5px;transition:all .2s;display:inline-block;margin-bottom:20px;}
+.contact-btn:hover{background:#cf5908;transform:translateY(-1px);}
+.contact-hours{font-size:12px;color:#444;letter-spacing:2px;text-transform:uppercase;margin-bottom:52px;}
+.info-cards{display:flex;gap:0;justify-content:center;margin-top:8px;}
+.info-card{padding:28px 44px;border-left:1px solid rgba(255,255,255,.07);text-align:center;}
+.info-card:first-child{border-left:none;}
+.info-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#444;font-weight:700;margin-bottom:8px;}
+.info-value{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:#888;letter-spacing:.3px;}
+
+/* ── WHY CALL ── */
+.why-call{background:#f6f6f4;padding:80px 64px;}
+.why-call-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:#ddd;}
+.wc-card{background:#f6f6f4;padding:40px 36px;}
+.wc-icon{font-size:28px;color:#e8650a;margin-bottom:14px;}
+.wc-title{font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a;margin-bottom:8px;}
+.wc-desc{font-size:13px;color:#888;line-height:1.75;font-weight:300;}
+
+/* ── FOOTER ── */
+footer{background:#0a0a0a;padding:72px 64px 32px;}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px;}
+.ft-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.ft-brand img{height:34px;filter:invert(1);}
+.ft-brand-name{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:1.5px;text-transform:uppercase;}
+.ft-desc{font-size:13px;color:#444;line-height:1.85;font-weight:300;max-width:260px;}
+.ft-col h4{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;color:#fff;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;}
+.ft-col a,.ft-col p{display:block;font-size:13px;color:#444;margin-bottom:11px;transition:color .2s;line-height:1.6;}
+.ft-col a:hover{color:#aaa;}
+.ft-col .highlight{color:#e8650a;font-weight:500;}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;}
+.ft-copy{font-size:12px;color:#2a2a2a;}
+.ft-links{display:flex;gap:20px;}
+.ft-links a{font-size:12px;color:#2a2a2a;transition:color .2s;}
+.ft-links a:hover{color:#555;}
+
+/* ── DARK MODE TOGGLE ── */
+#dm-toggle{position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;background:rgba(15,15,15,.9);color:#666;border:1px solid rgba(255,255,255,.08);cursor:pointer;transition:all .2s;border-radius:20px;backdrop-filter:blur(8px);}
+#dm-toggle:hover{color:#ccc;border-color:rgba(255,255,255,.2);}
+
+/* ── DARK MODE ── */
+body.dark{background:#141414;}
+body.dark nav{background:#141414;border-bottom-color:#222;}
+body.dark .nav-logo-text .logo-name{color:#d8d8d8;}
+body.dark .nav-links a{color:#666;}
+body.dark .nav-links a:hover{color:#d0d0d0;}
+body.dark .why-call{background:#1a1a1a;}
+body.dark .why-call-inner{background:#0f0f0f;}
+body.dark .wc-card{background:#1a1a1a;}
+body.dark .wc-title{color:#d0d0d0;}
+body.dark .wc-desc{color:#555;}
+
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-left">Serving All of Arizona · Mon – Sat 8:00 AM – 5:00 PM</span>
+  <div class="top-bar-right">
+    <a href="tel:4802712014">(480) 271-2014</a>
+    <span>|</span>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="Logo Icon Vector.svg" alt="Brothers Auto Glass">
+    <div class="nav-logo-text">
+      <div class="logo-name">Brothers Auto Glass</div>
+      <div class="logo-sub">Licensed · Insured · Guaranteed</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+    <li><a href="fleet.html" class="fleet-link">Fleet</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-cta">(480) 271-2014</button>
+</nav>
+
+<section class="contact-hero">
+<img class="hero-bg-mark" src="Logo Icon Vector.svg" alt="">
+  <div class="contact-inner">
+    <div class="contact-eyebrow"><span>Get In Touch</span></div>
+    <h1>We Are One<br>Call Away.</h1>
+    <p class="sub">We hate automated systems just as much as you do — that's why we guarantee a real person picks up every single time you call.</p>
+    <a class="phone-display" href="tel:4802712014">(480) 271-2014</a>
+    <br>
+    <button class="contact-btn" onclick="window.location.href='tel:4802712014'">Call Now</button>
+    <p class="contact-hours">Monday – Saturday &nbsp;·&nbsp; 8:00 AM – 5:00 PM &nbsp;·&nbsp; Mobile Service Statewide</p>
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-label">Service Area</div>
+        <div class="info-value">Arizona Wide</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Response Time</div>
+        <div class="info-value">Same Day</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Hours</div>
+        <div class="info-value">Mon – Sat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CALL -->
+<div class="why-call">
+  <div class="why-call-inner">
+    <div class="wc-card">
+      <div class="wc-icon">☎</div>
+      <div class="wc-title">Real People Only</div>
+      <p class="wc-desc">No phone trees, no bots, no "press 1 for service." A Brothers team member picks up and helps you directly.</p>
+    </div>
+    <div class="wc-card">
+      <div class="wc-icon">⚡</div>
+      <div class="wc-title">Quote in Minutes</div>
+      <p class="wc-desc">We give you a clear price on the call — no forms to fill, no waiting for a callback. Just a straight answer.</p>
+    </div>
+    <div class="wc-card">
+      <div class="wc-icon">📅</div>
+      <div class="wc-title">Scheduled Immediately</div>
+      <p class="wc-desc">We book your appointment on the spot. Most jobs scheduled within 3–5 days, same-day when available.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand">
+        <img src="Logo Icon Vector.svg" alt="">
+        <span class="ft-brand-name">Brothers Auto Glass</span>
+      </div>
+      <p class="ft-desc">Family-owned and operated since 2021. Serving all of Arizona with mobile auto glass replacement and repair.</p>
+    </div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <a href="index.html#services">Windshield Replacement</a>
+      <a href="index.html#services">Rock Chip Repair</a>
+      <a href="index.html#services">Side &amp; Rear Windows</a>
+      <a href="index.html#services">ADAS Recalibration</a>
+      <a href="index.html#services">Mobile Service</a>
+      <a href="fleet.html">Fleet Work</a>
+    </div>
+    <div class="ft-col">
+      <h4>Company</h4>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="fleet.html">Fleet Accounts</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <a href="tel:4802712014" class="highlight">(480) 271-2014</a>
+      <p>Mon – Sat: 8:00 AM – 5:00 PM</p>
+      <p>Mobile Service · Arizona Wide</p>
+      <p style="margin-top:16px;color:#333;font-size:12px;">Licensed · Insured · Guaranteed</p>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2026 Brothers Auto Glass · All Rights Reserved</p>
+    <div class="ft-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<button id="dm-toggle" onclick="toggleDark()">○ Light Mode</button>
+
+<script>
+(function(){
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY > 20); });
+  const isDark = localStorage.getItem('darkMode')==='on';
+  if(isDark) document.body.classList.add('dark');
+  const btn = document.getElementById('dm-toggle');
+  if(btn) btn.textContent = isDark ? '○ Light Mode' : '◑ Dark Mode';
+})();
+function toggleDark(){
+  const on = document.body.classList.toggle('dark');
+  document.getElementById('dm-toggle').textContent = on ? '○ Light Mode' : '◑ Dark Mode';
+  localStorage.setItem('darkMode', on ? 'on' : 'off');
+}
+</script>
+</body>
+</html>

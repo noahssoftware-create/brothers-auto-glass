@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brothers Auto Glass — Windshield Replacement & Repair Arizona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>if(localStorage.getItem('darkMode')==='on')document.body.classList.add('dark');</script>
+<style>
+
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;line-height:1;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+/* ── TOP BAR ── */
+.top-bar{background:#0f0f0f;padding:8px 64px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar-left{font-size:12px;color:#666;letter-spacing:.5px;}
+.top-bar-right{display:flex;gap:28px;align-items:center;}
+.top-bar-right a{font-size:12px;color:#555;letter-spacing:.5px;transition:color .2s;}
+.top-bar-right a:hover{color:#e8650a;}
+.top-bar-right span{color:#333;font-size:10px;}
+
+/* ── NAV ── */
+nav{background:#fff;border-bottom:1px solid #ebebeb;padding:0 64px;display:flex;justify-content:space-between;align-items:center;height:76px;position:sticky;top:0;z-index:100;transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{height:42px;width:auto;}
+.nav-logo-text .logo-name{font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1a1a1a;line-height:1;}
+.nav-logo-text .logo-sub{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#bbb;margin-top:4px;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;color:#777;letter-spacing:.3px;transition:color .2s;padding:4px 0;border-bottom:2px solid transparent;}
+.nav-links a:hover{color:#1a1a1a;border-bottom-color:#e8650a;}
+.nav-links a.fleet-link{color:#e8650a;font-weight:600;}
+.nav-cta{background:#e8650a;color:#fff;padding:11px 26px;font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5px;border:none;cursor:pointer;border-radius:5px;transition:background .2s;white-space:nowrap;}
+.nav-cta:hover{background:#cf5908;}
+
+/* ── HERO ── */
+.hero{background:#0f0f0f;min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:0 64px;position:relative;overflow:hidden;}
+.hero-bg-mark{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:680px;height:680px;opacity:.04;filter:invert(1);pointer-events:none;user-select:none;}
+.hero-inner{position:relative;z-index:2;max-width:720px;padding:100px 0;}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+.hero-eyebrow span{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#e8650a;font-weight:600;}
+.hero-eyebrow::before{content:'';display:block;width:36px;height:2px;background:#e8650a;flex-shrink:0;}
+.hero h1{font-family:'Oswald',sans-serif;font-size:80px;font-weight:700;line-height:.95;text-transform:uppercase;letter-spacing:-2px;color:#fff;margin-bottom:28px;}
+.hero h1 em{font-style:normal;color:#e8650a;}
+.hero-sub{font-size:16px;line-height:1.85;color:#666;font-weight:300;max-width:520px;margin-bottom:44px;}
+.hero-btns{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+.btn-primary{background:#e8650a;color:#fff;padding:16px 38px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:5px;transition:all .2s;display:inline-flex;align-items:center;gap:10px;}
+.btn-primary:hover{background:#cf5908;transform:translateY(-1px);}
+.btn-ghost{background:transparent;color:#fff;padding:15px 38px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);cursor:pointer;border-radius:5px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);}
+.hero-stats{position:absolute;bottom:0;right:0;display:flex;}
+.hero-stat{padding:28px 44px;text-align:center;border-left:1px solid rgba(255,255,255,.07);}
+.hero-stat-n{font-family:'Oswald',sans-serif;font-size:44px;font-weight:700;color:#fff;line-height:1;letter-spacing:-1px;}
+.hero-stat-l{font-size:10px;color:#444;letter-spacing:2.5px;text-transform:uppercase;margin-top:8px;}
+
+/* ── TRUST STRIP ── */
+.trust-strip{background:#e8650a;padding:18px 64px;display:flex;justify-content:space-around;align-items:center;gap:12px;}
+.trust-item{display:flex;align-items:center;gap:10px;color:#fff;}
+.trust-icon{font-size:18px;}
+.trust-text{font-size:13px;font-weight:500;letter-spacing:.3px;}
+
+/* ── SECTION COMMONS ── */
+.sec{padding:96px 64px;}
+.sec-alt{background:#f6f6f4;}
+.sec-dark{background:#0f0f0f;}
+.sec-head{margin-bottom:56px;}
+.sec-ey{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#e8650a;font-weight:700;margin-bottom:10px;}
+.sec-title{font-family:'Oswald',sans-serif;font-size:46px;font-weight:700;text-transform:uppercase;letter-spacing:-0.5px;line-height:1.05;color:#1a1a1a;}
+.sec-desc{font-size:15px;color:#777;line-height:1.85;max-width:480px;margin-top:14px;font-weight:300;}
+.sec-dark .sec-title{color:#fff;}
+.sec-dark .sec-desc{color:#555;}
+
+/* ── SERVICES FEATURED (2 large cards) ── */
+.services-featured{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#ddd;margin-bottom:2px;}
+.sf-card{background:#fff;padding:56px 52px;display:flex;flex-direction:column;justify-content:space-between;min-height:340px;transition:background .3s;position:relative;overflow:hidden;}
+.sf-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:#e8650a;transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.sf-card:hover{background:#f9f6f3;}
+.sf-card:hover::after{transform:scaleX(1);}
+.sf-num{font-family:'Oswald',sans-serif;font-size:56px;font-weight:700;color:#f0f0f0;line-height:1;margin-bottom:16px;letter-spacing:-2px;}
+.sf-title{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a;margin-bottom:12px;}
+.sf-desc{font-size:14px;color:#777;line-height:1.8;font-weight:300;max-width:380px;}
+.sf-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e8650a;margin-top:28px;}
+.sf-link::after{content:'→';transition:transform .2s;}
+.sf-card:hover .sf-link::after{transform:translateX(4px);}
+
+/* ── SERVICES GRID (4 icon cards) ── */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#ddd;}
+.sg-card{background:#fff;padding:36px 32px;transition:all .25s;}
+.sg-card:hover{background:#0f0f0f;}
+.sg-card:hover .sg-title,.sg-card:hover .sg-desc{color:#fff;}
+.sg-card:hover .sg-icon{color:#e8650a;}
+.sg-icon{font-size:28px;margin-bottom:16px;color:#1a1a1a;transition:color .25s;}
+.sg-title{font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a;margin-bottom:8px;transition:color .25s;}
+.sg-desc{font-size:13px;color:#888;line-height:1.7;font-weight:300;transition:color .25s;}
+.sg-badge{display:inline-block;background:#e8650a;color:#fff;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:12px;}
+
+/* ── WHY US ── */
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.why-left .sec-desc{max-width:420px;}
+.why-visual{background:#1a1a1a;border-radius:6px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;max-width:480px;}
+.why-visual-img{width:55%;opacity:.12;filter:invert(1);}
+.why-tagline{position:absolute;bottom:36px;left:36px;right:36px;}
+.why-tagline-big{font-family:'Oswald',sans-serif;font-size:52px;font-weight:700;color:rgba(255,255,255,.08);text-transform:uppercase;letter-spacing:-1px;line-height:1;}
+.why-tagline-small{font-size:11px;color:rgba(255,255,255,.25);letter-spacing:3px;text-transform:uppercase;margin-top:6px;}
+.why-points{display:flex;flex-direction:column;gap:0;border-top:1px solid #ebebeb;}
+.why-pt{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid #ebebeb;align-items:flex-start;}
+.why-pt-n{font-family:'Oswald',sans-serif;font-size:10px;font-weight:700;color:#e8650a;letter-spacing:2px;padding-top:3px;flex-shrink:0;width:32px;}
+.why-pt-body h4{font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a;margin-bottom:5px;}
+.why-pt-body p{font-size:13px;color:#888;line-height:1.7;font-weight:300;}
+
+/* ── REVIEWS ── */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rv-card{background:#fff;border:1px solid #ebebeb;border-radius:8px;padding:32px 28px;transition:box-shadow .2s;}
+.rv-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);}
+.rv-stars{color:#e8650a;font-size:14px;letter-spacing:3px;margin-bottom:16px;}
+.rv-quote{font-size:14px;color:#555;line-height:1.85;font-weight:300;font-style:italic;margin-bottom:24px;}
+.rv-foot{display:flex;justify-content:space-between;align-items:center;}
+.rv-name{font-size:13px;font-weight:700;color:#1a1a1a;}
+.rv-src{font-size:10px;color:#bbb;letter-spacing:2px;text-transform:uppercase;font-weight:600;}
+
+/* ── FLEET CTA BANNER ── */
+.fleet-banner{background:#0f0f0f;padding:80px 64px;display:flex;justify-content:space-between;align-items:center;gap:40px;}
+.fleet-banner-left .ey{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#e8650a;font-weight:600;margin-bottom:14px;}
+.fleet-banner-left h2{font-family:'Oswald',sans-serif;font-size:44px;font-weight:700;text-transform:uppercase;color:#fff;letter-spacing:-0.5px;line-height:1.05;margin-bottom:12px;}
+.fleet-banner-left p{font-size:15px;color:#555;font-weight:300;line-height:1.8;max-width:520px;}
+.fleet-btn{background:#e8650a;color:#fff;padding:16px 40px;font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:5px;transition:all .2s;flex-shrink:0;}
+.fleet-btn:hover{background:#cf5908;transform:translateY(-1px);}
+
+/* ── CALL CTA ── */
+.call-cta{background:#e8650a;padding:80px 64px;text-align:center;}
+.call-cta h2{font-family:'Oswald',sans-serif;font-size:52px;font-weight:700;text-transform:uppercase;letter-spacing:-0.5px;color:#fff;margin-bottom:12px;}
+.call-cta p{font-size:15px;color:rgba(255,255,255,.75);font-weight:300;margin-bottom:36px;line-height:1.7;}
+.call-num{font-family:'Oswald',sans-serif;font-size:64px;font-weight:700;color:#fff;letter-spacing:-2px;line-height:1;margin-bottom:28px;display:block;transition:opacity .2s;}
+.call-num:hover{opacity:.85;}
+.cta-call-btn{background:#fff;color:#e8650a;padding:16px 44px;font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:5px;transition:all .2s;}
+.cta-call-btn:hover{background:#f0f0f0;}
+.cta-note{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase;margin-top:14px;}
+
+/* ── FOOTER ── */
+footer{background:#0a0a0a;padding:72px 64px 32px;}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px;}
+.ft-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.ft-brand img{height:34px;filter:invert(1);}
+.ft-brand-name{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:1.5px;text-transform:uppercase;}
+.ft-desc{font-size:13px;color:#444;line-height:1.85;font-weight:300;max-width:260px;}
+.ft-col h4{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;color:#fff;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;}
+.ft-col a,.ft-col p{display:block;font-size:13px;color:#444;margin-bottom:11px;transition:color .2s;line-height:1.6;}
+.ft-col a:hover{color:#aaa;}
+.ft-col .highlight{color:#e8650a;font-weight:500;}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;}
+.ft-copy{font-size:12px;color:#2a2a2a;}
+.ft-links{display:flex;gap:20px;}
+.ft-links a{font-size:12px;color:#2a2a2a;transition:color .2s;}
+.ft-links a:hover{color:#555;}
+
+/* ── DARK MODE TOGGLE ── */
+#dm-toggle{position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;background:rgba(15,15,15,.9);color:#666;border:1px solid rgba(255,255,255,.08);cursor:pointer;transition:all .2s;border-radius:20px;backdrop-filter:blur(8px);}
+#dm-toggle:hover{color:#ccc;border-color:rgba(255,255,255,.2);}
+
+/* ── DARK MODE ── */
+body.dark{background:#141414;color:#c8c8c8;}
+body.dark nav{background:#141414;border-bottom-color:#222;}
+body.dark .nav-logo-text .logo-name{color:#d8d8d8;}
+body.dark .nav-links a{color:#666;}
+body.dark .nav-links a:hover{color:#d0d0d0;}
+body.dark .sec-alt{background:#1a1a1a;}
+body.dark .sec-title{color:#d8d8d8;}
+body.dark .sec-desc{color:#555;}
+body.dark .services-featured{background:#0f0f0f;}
+body.dark .sf-card{background:#1a1a1a;}
+body.dark .sf-card:hover{background:#222;}
+body.dark .sf-num{color:#222;}
+body.dark .sf-title{color:#d0d0d0;}
+body.dark .sf-desc{color:#555;}
+body.dark .services-grid{background:#0f0f0f;}
+body.dark .sg-card{background:#1a1a1a;}
+body.dark .sg-card:hover{background:#0d0d0d;}
+body.dark .sg-title{color:#d0d0d0;}
+body.dark .sg-desc{color:#555;}
+body.dark .sg-icon{color:#d0d0d0;}
+body.dark .why-pt-body h4{color:#d0d0d0;}
+body.dark .why-pt-body p{color:#555;}
+body.dark .why-points,.why-pt{border-color:#222;}
+body.dark .rv-card{background:#1a1a1a;border-color:#222;}
+body.dark .rv-quote{color:#555;}
+body.dark .rv-name{color:#d0d0d0;}
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="top-bar-left">Serving All of Arizona · Mon – Sat 8:00 AM – 5:00 PM</span>
+  <div class="top-bar-right">
+    <a href="contact.html">(480) 271-2014</a>
+    <span>|</span>
+    <a href="contact.html">Get a Free Quote</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="Logo Icon Vector.svg" alt="Brothers Auto Glass">
+    <div class="nav-logo-text">
+      <div class="logo-name">Brothers Auto Glass</div>
+      <div class="logo-sub">Licensed · Insured · Guaranteed</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="fleet.html" class="fleet-link">Fleet</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="window.location.href='contact.html'">(480) 271-2014</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg-mark" src="Logo Icon Vector.svg" alt="">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span>Serving Arizona · Est. 2021</span></div>
+    <h1>Arizona's Glass<br>Repair <em>Experts.</em></h1>
+    <p class="hero-sub">No runaround, no subcontractors, no fine print. Brothers Auto Glass comes to you, gets it done right, and backs every job with a lifetime warranty.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="window.location.href='contact.html'">Call for a Free Quote &nbsp;→</button>
+      <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">View Services</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-n">20K+</div><div class="hero-stat-l">Jobs Done</div></div>
+    <div class="hero-stat"><div class="hero-stat-n">15yr</div><div class="hero-stat-l">Experience</div></div>
+    <div class="hero-stat"><div class="hero-stat-n">5.0★</div><div class="hero-stat-l">Rating</div></div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Free Mobile Service</span></div>
+  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">All Insurance Accepted</span></div>
+  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Lifetime Warranty on Labor</span></div>
+  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Same-Day Available</span></div>
+  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Real Person Every Call</span></div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="sec-head">
+    <div class="sec-ey">What We Do</div>
+    <h2 class="sec-title">Full-Service Auto Glass,<br>Done Right the First Time</h2>
+  </div>
+
+  <!-- 2 featured cards -->
+  <div class="services-featured">
+    <div class="sf-card">
+      <div>
+        <div class="sf-num">01</div>
+        <h3 class="sf-title">Windshield Replacement</h3>
+        <p class="sf-desc">OEM-quality glass installed by our own certified crew. We handle the insurance claim, you get your car back in under an hour — usually at no cost to you.</p>
+      </div>
+      <span class="sf-link">Learn More</span>
+    </div>
+    <div class="sf-card">
+      <div>
+        <div class="sf-num">02</div>
+        <h3 class="sf-title">Rock Chip Repair</h3>
+        <p class="sf-desc">Filled in 30 minutes. Almost always covered 100% by your insurance with zero deductible. A small fix today prevents a full replacement tomorrow.</p>
+      </div>
+      <span class="sf-link">Learn More</span>
+    </div>
+  </div>
+
+  <!-- 4 icon cards -->
+  <div class="services-grid">
+    <div class="sg-card">
+      <div class="sg-icon">◻</div>
+      <div class="sg-title">Side &amp; Rear Windows</div>
+      <p class="sg-desc">All makes and models. Same-day service on most vehicles in Arizona.</p>
+    </div>
+    <div class="sg-card">
+      <div class="sg-icon">◉</div>
+      <div class="sg-title">ADAS Recalibration</div>
+      <p class="sg-desc">Camera and sensor recalibration after every windshield replacement. Your safety systems stay safe.</p>
+    </div>
+    <div class="sg-card">
+      <div class="sg-icon">⬡</div>
+      <div class="sg-title">Mobile Service</div>
+      <p class="sg-desc">We come to your home, office, or wherever works for you. Zero inconvenience.</p>
+    </div>
+    <div class="sg-card">
+      <div>
+        <div class="sg-badge">Fleet Deals Available</div>
+        <div class="sg-icon">▦</div>
+        <div class="sg-title">Fleet Work</div>
+        <p class="sg-desc">Volume pricing for businesses. One call covers your entire fleet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BROTHERS -->
+<section class="sec sec-alt" id="about">
+  <div class="why-layout">
+    <div>
+      <div class="why-visual">
+        <img class="why-visual-img" src="Logo Icon Vector.svg" alt="">
+        <div class="why-tagline">
+          <div class="why-tagline-big">Brothers</div>
+          <div class="why-tagline-small">Est. 2021 · Arizona</div>
+        </div>
+      </div>
+    </div>
+    <div class="why-left">
+      <div class="sec-ey">Why Brothers</div>
+      <h2 class="sec-title" style="margin-bottom:14px;">We Show Up.<br>We Do It Right.</h2>
+      <p class="sec-desc">Between us we brought 15 years of hands-on glass installation experience when we launched Brothers in 2021. Every tech is ours — trained in-house, background-checked, accountable to us and to you.</p>
+      <div class="why-points" style="margin-top:36px;">
+        <div class="why-pt">
+          <div class="why-pt-n">01</div>
+          <div class="why-pt-body"><h4>OEM-Quality Glass Only</h4><p>We never cut corners with cheap imports. OEM or OEM-equivalent glass on every single job.</p></div>
+        </div>
+        <div class="why-pt">
+          <div class="why-pt-n">02</div>
+          <div class="why-pt-body"><h4>Certified Technicians — Our Own</h4><p>The person who shows up is our employee. Not a subcontractor, not a stranger. Our people.</p></div>
+        </div>
+        <div class="why-pt">
+          <div class="why-pt-n">03</div>
+          <div class="why-pt-body"><h4>Lifetime Warranty on All Labor</h4><p>If the installation ever fails, we come back. No charge, no argument, no fine print.</p></div>
+        </div>
+        <div class="why-pt">
+          <div class="why-pt-n">04</div>
+          <div class="why-pt-body"><h4>Insurance Handled For You</h4><p>We manage the entire claim. Most customers pay nothing out of pocket.</p></div>
+        </div>
+        <div class="why-pt">
+          <div class="why-pt-n">05</div>
+          <div class="why-pt-body"><h4>Available This Week</h4><p>Most jobs scheduled within 3 to 5 business days. Same-day when you need it.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="sec-head" style="display:flex;justify-content:space-between;align-items:flex-end;">
+    <div>
+      <div class="sec-ey">Customer Reviews</div>
+      <h2 class="sec-title">5.0 Stars Across the Board</h2>
+    </div>
+    <p style="font-size:13px;color:#aaa;letter-spacing:1px;text-transform:uppercase;font-weight:600;">Google &amp; Yelp Verified</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-quote">"Called in the morning, they were at my house by noon. Windshield replaced in under an hour. The tech was professional and cleaned everything up. Couldn't ask for more."</p>
+      <div class="rv-foot"><span class="rv-name">Traci L.</span><span class="rv-src">Yelp</span></div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-quote">"Best experience I've had with any auto service. They came to my office, handled my insurance claim, and I didn't pay a cent. The glass looks perfect."</p>
+      <div class="rv-foot"><span class="rv-name">John W.</span><span class="rv-src">Yelp</span></div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-quote">"Super fast and friendly. Fixed my chip in about 20 minutes right in my driveway. Insurance covered it completely. These guys make it easy."</p>
+      <div class="rv-foot"><span class="rv-name">Penny R.</span><span class="rv-src">Yelp</span></div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-quote">"I was nervous about the whole process but they walked me through everything. Fast, clean, professional. My new windshield looks amazing. Highly recommend."</p>
+      <div class="rv-foot"><span class="rv-name">Rosie M.</span><span class="rv-src">Yelp</span></div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-quote">"Replaced my windshield same day I called. Tech showed up on time, was super professional, and my car was done in no time. Will definitely use them again."</p>
+      <div class="rv-foot"><span class="rv-name">Marcus T.</span><span class="rv-src">Google</span></div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-quote">"Amazing service from start to finish. They handled my insurance, came to my house, and finished faster than expected. Genuinely the easiest experience ever."</p>
+      <div class="rv-foot"><span class="rv-name">Diane K.</span><span class="rv-src">Google</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLEET BANNER -->
+<div class="fleet-banner">
+  <div class="fleet-banner-left">
+    <div class="ey">For Businesses</div>
+    <h2>Fleet Glass Service<br>Without the Hassle</h2>
+    <p>Running a fleet? We handle volume accounts with reduced rates, transparent pricing, and an invoice after every job — not one big bill at the end of the month.</p>
+  </div>
+  <button class="fleet-btn" onclick="window.location.href='fleet.html'">Explore Fleet Services →</button>
+</div>
+
+<!-- CALL CTA -->
+<section class="call-cta">
+  <h2>Ready to Get Started?</h2>
+  <p>We hate automated systems just as much as you do — a real person picks up every time.</p>
+  <a class="call-num" href="tel:4802712014">(480) 271-2014</a>
+  <br>
+  <button class="cta-call-btn" onclick="window.location.href='contact.html'">Call Now</button>
+  <p class="cta-note">Mon – Sat &nbsp;·&nbsp; 8:00 AM – 5:00 PM &nbsp;·&nbsp; Mobile Statewide</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand">
+        <img src="Logo Icon Vector.svg" alt="">
+        <span class="ft-brand-name">Brothers Auto Glass</span>
+      </div>
+      <p class="ft-desc">Family-owned and operated since 2021. Serving all of Arizona with mobile auto glass replacement and repair — backed by 15 years of combined installation experience.</p>
+    </div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <a href="#services">Windshield Replacement</a>
+      <a href="#services">Rock Chip Repair</a>
+      <a href="#services">Side &amp; Rear Windows</a>
+      <a href="#services">ADAS Recalibration</a>
+      <a href="#services">Mobile Service</a>
+      <a href="fleet.html">Fleet Work</a>
+    </div>
+    <div class="ft-col">
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="fleet.html">Fleet Accounts</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <a href="tel:4802712014" class="highlight">(480) 271-2014</a>
+      <p>Mon – Sat: 8:00 AM – 5:00 PM</p>
+      <p>Mobile Service · Arizona Wide</p>
+      <p style="margin-top:16px;color:#333;font-size:12px;">Licensed · Insured · Guaranteed</p>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2026 Brothers Auto Glass · All Rights Reserved</p>
+    <div class="ft-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<button id="dm-toggle" onclick="toggleDark()">◑ Dark Mode</button>
+
+<script>
+(function(){
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+  const isDark = localStorage.getItem('darkMode')==='on';
+  if(isDark) document.body.classList.add('dark');
+  const btn = document.getElementById('dm-toggle');
+  if(btn) btn.textContent = isDark ? '○ Light Mode' : '◑ Dark Mode';
+})();
+function toggleDark(){
+  const on = document.body.classList.toggle('dark');
+  document.getElementById('dm-toggle').textContent = on ? '○ Light Mode' : '◑ Dark Mode';
+  localStorage.setItem('darkMode', on ? 'on' : 'off');
+}
+</script>
+</body>
+</html>
