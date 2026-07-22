@@ -155,6 +155,9 @@ body.dark .mobile-dm{color:#666;border-top-color:#222;}
 body.dark .mobile-dm:hover{color:#aaa;}
 
 /* ── DARK MODE ── */
+.logo-dark{display:none;}
+body.dark .logo-light{display:none;}
+body.dark .logo-dark{display:block;}
 body.dark{background:#141414;}
 body.dark nav{background:#141414;border-bottom-color:#222;}
 body.dark .nav-logo-text .logo-name{color:#d8d8d8;}
@@ -181,7 +184,8 @@ body.dark .wc-desc{color:#555;}
 
 <nav id="main-nav">
   <a href="index.html" class="nav-logo">
-    <img src="Logo Icon Vector.svg" alt="Brothers Auto Glass">
+    <img class="logo-light" src="Logo Icon Vector.svg" alt="Brothers Auto Glass">
+    <img class="logo-dark" src="Logo Icon Orange.svg" alt="Brothers Auto Glass">
     <div class="nav-logo-text">
       <div class="logo-name">Brothers Auto Glass</div>
       <div class="logo-sub">Licensed · Insured · Guaranteed</div>
