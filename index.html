@@ -41,8 +41,9 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
 .nav-cta:hover{background:#cf5908;}
 
 /* ── HERO ── */
-.hero{background:#0f0f0f;min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:0 64px;position:relative;overflow:hidden;}
-.hero-bg-mark{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:680px;height:680px;opacity:.04;filter:invert(1);pointer-events:none;user-select:none;}
+.hero{background:url('urus-hero.jpg') center 50%/cover no-repeat;min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:0 64px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(5,5,5,.88) 0%,rgba(5,5,5,.70) 55%,rgba(5,5,5,.30) 100%);z-index:1;}
+.hero-bg-mark{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:680px;height:680px;opacity:.04;filter:invert(1);pointer-events:none;user-select:none;z-index:2;}
 .hero-inner{position:relative;z-index:2;max-width:720px;padding:100px 0;}
 .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
 .hero-eyebrow span{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#e8650a;font-weight:600;}
@@ -55,7 +56,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
 .btn-primary:hover{background:#cf5908;transform:translateY(-1px);}
 .btn-ghost{background:transparent;color:#fff;padding:15px 38px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);cursor:pointer;border-radius:5px;transition:all .2s;}
 .btn-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);}
-.hero-stats{position:absolute;bottom:0;right:0;display:flex;}
+.hero-stats{position:absolute;bottom:0;right:0;display:flex;z-index:2;}
 .hero-stat{padding:28px 44px;text-align:center;border-left:1px solid rgba(255,255,255,.07);}
 .hero-stat-n{font-family:'Oswald',sans-serif;font-size:44px;font-weight:700;color:#fff;line-height:1;letter-spacing:-1px;}
 .hero-stat-l{font-size:10px;color:#444;letter-spacing:2.5px;text-transform:uppercase;margin-top:8px;}
@@ -102,13 +103,10 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
 .sg-badge{display:inline-block;background:#e8650a;color:#fff;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:12px;}
 
 /* ── WHY US ── */
-.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .why-left .sec-desc{max-width:420px;}
-.why-visual{background:#1a1a1a;border-radius:6px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;max-width:480px;}
-.why-visual-img{width:55%;opacity:.12;filter:invert(1);}
-.why-tagline{position:absolute;bottom:36px;left:36px;right:36px;}
-.why-tagline-big{font-family:'Oswald',sans-serif;font-size:52px;font-weight:700;color:rgba(255,255,255,.08);text-transform:uppercase;letter-spacing:-1px;line-height:1;}
-.why-tagline-small{font-size:11px;color:rgba(255,255,255,.25);letter-spacing:3px;text-transform:uppercase;margin-top:6px;}
+.why-visual{display:grid;grid-template-columns:1fr 1fr;gap:4px;border-radius:6px;overflow:hidden;width:100%;}
+.why-visual-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
 .why-points{display:flex;flex-direction:column;gap:0;border-top:1px solid #ebebeb;}
 .why-pt{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid #ebebeb;align-items:flex-start;}
 .why-pt-n{font-family:'Oswald',sans-serif;font-size:10px;font-weight:700;color:#e8650a;letter-spacing:2px;padding-top:3px;flex-shrink:0;width:32px;}
@@ -235,7 +233,7 @@ footer{background:#0a0a0a;padding:72px 64px 32px;}
   .sg-card{padding:24px 18px;}
   .sg-title{font-size:15px;}
   .why-layout{grid-template-columns:1fr;gap:36px;}
-  .why-visual{max-width:100%;aspect-ratio:16/9;}
+  .why-visual{max-width:100%;aspect-ratio:1/1;}
   .reviews-grid{grid-template-columns:1fr;}
   .fleet-banner{padding:52px 20px;flex-direction:column;align-items:flex-start;gap:24px;}
   .fleet-banner-left h2{font-size:32px;}
@@ -421,11 +419,10 @@ body.dark .mobile-dm:hover{color:#aaa;}
   <div class="why-layout">
     <div>
       <div class="why-visual">
-        <img class="why-visual-img" src="Logo Icon Vector.svg" alt="">
-        <div class="why-tagline">
-          <div class="why-tagline-big">Brothers</div>
-          <div class="why-tagline-small">Est. 2021 · Arizona</div>
-        </div>
+        <img class="why-visual-img" src="mazda-hero.jpg" alt="Technician working on red Mazda MX-5">
+        <img class="why-visual-img" src="urus-hero.jpg" alt="White Lamborghini Urus windshield job">
+        <img class="why-visual-img" src="ferrari.jpg" alt="Ferrari windshield installation">
+        <img class="why-visual-img" src="lambo-hero.jpg" alt="White Lamborghini Huracán windshield job">
       </div>
     </div>
     <div class="why-left">
