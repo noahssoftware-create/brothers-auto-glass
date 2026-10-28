@@ -35,7 +35,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{font-size:13px;font-weight:500;color:#777;letter-spacing:.3px;transition:color .2s;padding:4px 0;border-bottom:2px solid transparent;}
 .nav-links a:hover{color:#1a1a1a;border-bottom-color:#e8650a;}
-.nav-links a.fleet-link{color:#e8650a;font-weight:600;}
+.nav-links a.active{color:#e8650a;font-weight:600;}
 .nav-cta{background:#0f0f0f;color:#fff;padding:11px 26px;font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5px;border:none;cursor:default;border-radius:5px;}
 
 /* ── HERO ── */
@@ -99,7 +99,7 @@ footer{background:#0a0a0a;padding:72px 64px 32px;}
 .mobile-nav ul{list-style:none;padding:8px 0;}
 .mobile-nav ul li{border-bottom:1px solid #f2f2f2;}
 .mobile-nav ul a{display:block;padding:17px 24px;font-size:16px;font-weight:500;color:#333;transition:color .2s;}
-.mobile-nav ul a:hover,.mobile-nav ul a.fleet-link{color:#e8650a;font-weight:600;}
+.mobile-nav ul a:hover,.mobile-nav ul a.active{color:#e8650a;font-weight:600;}
 .mobile-nav-cta{display:block;margin:16px 24px 8px;background:#e8650a;color:#fff;padding:15px 24px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border:none;border-radius:5px;cursor:pointer;width:calc(100% - 48px);text-align:center;}
 .mobile-dm{display:block;margin:0 24px 20px;background:none;color:#999;padding:12px 0;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border:none;border-top:1px solid #f0f0f0;cursor:pointer;width:calc(100% - 48px);text-align:center;transition:color .2s;}
 .mobile-dm:hover{color:#1a1a1a;}
@@ -192,11 +192,12 @@ body.dark .wc-desc{color:#555;}
     </div>
   </a>
   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#reviews">Reviews</a></li>
-    <li><a href="fleet.html" class="fleet-link">Fleet</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="fleet.html">Fleet</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <button class="nav-cta">(480) 271-2014</button>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -205,11 +206,12 @@ body.dark .wc-desc{color:#555;}
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <ul>
+    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
     <li><a href="index.html#services" onclick="closeMenu()">Services</a></li>
     <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
-    <li><a href="index.html#reviews" onclick="closeMenu()">Reviews</a></li>
-    <li><a href="fleet.html" class="fleet-link" onclick="closeMenu()">Fleet</a></li>
-    <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
+    <li><a href="reviews.html" onclick="closeMenu()">Reviews</a></li>
+    <li><a href="fleet.html" onclick="closeMenu()">Fleet</a></li>
+    <li><a href="contact.html" class="active" onclick="closeMenu()">Contact</a></li>
   </ul>
   <button class="mobile-nav-cta" onclick="window.location.href='tel:4802712014'">(480) 271-2014 — Call Now</button>
   <button class="mobile-dm" id="mobile-dm" onclick="toggleDark()">◑ Dark Mode</button>
@@ -284,7 +286,7 @@ body.dark .wc-desc{color:#555;}
     <div class="ft-col">
       <h4>Company</h4>
       <a href="index.html#about">About Us</a>
-      <a href="index.html#reviews">Reviews</a>
+      <a href="reviews.html">Reviews</a>
       <a href="fleet.html">Fleet Accounts</a>
       <a href="contact.html">Contact</a>
     </div>
