@@ -87,9 +87,12 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
 .sf-num{font-family:'Oswald',sans-serif;font-size:56px;font-weight:700;color:#f0f0f0;line-height:1;margin-bottom:16px;letter-spacing:-2px;}
 .sf-title{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a;margin-bottom:12px;}
 .sf-desc{font-size:14px;color:#777;line-height:1.8;font-weight:300;max-width:380px;}
-.sf-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e8650a;margin-top:28px;}
+.sf-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e8650a;margin-top:28px;cursor:pointer;user-select:none;}
 .sf-link::after{content:'→';transition:transform .2s;}
 .sf-card:hover .sf-link::after{transform:translateX(4px);}
+.sf-expand{max-height:0;overflow:hidden;transition:max-height .35s ease;margin-top:0;}
+.sf-expand.open{max-height:200px;margin-top:16px;}
+.sf-expand p{font-size:14px;color:#777;line-height:1.8;font-weight:300;border-left:2px solid #e8650a;padding-left:14px;}
 
 /* ── SERVICES GRID (4 icon cards) ── */
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#ddd;}
@@ -375,17 +378,23 @@ body.dark .mobile-dm:hover{color:#aaa;}
       <div>
         <div class="sf-num">01</div>
         <h3 class="sf-title">Windshield Replacement</h3>
-        <p class="sf-desc">OEM-quality glass installed by our own certified crew. We handle the insurance claim, you get your car back in under an hour — usually at no cost to you.</p>
+        <p class="sf-desc">OEM-quality glass installed by our own certified crew. We handle the insurance claim and get your car back to you in under an hour, usually at no cost to you.</p>
+        <div class="sf-expand" id="windshield-detail">
+          <p>Dealing with insurance can be a headache, so we take on as much of that process as we can for you. We work directly with your provider, handle the paperwork, and make sure everything goes through smoothly so you can focus on your day. Give us a call and we'll check your coverage to find you the best deal possible.</p>
+        </div>
       </div>
-      <span class="sf-link">Learn More</span>
+      <span class="sf-link" onclick="toggleWindshield(this)">Learn More</span>
     </div>
     <div class="sf-card">
       <div>
         <div class="sf-num">02</div>
         <h3 class="sf-title">Rock Chip Repair</h3>
         <p class="sf-desc">Filled in 30 minutes. Almost always covered 100% by your insurance with zero deductible. A small fix today prevents a full replacement tomorrow.</p>
+        <div class="sf-expand" id="chip-detail">
+          <p>We inject a professional-grade resin directly into the chip or crack. It bonds to the surrounding glass and cures into a hard, glass-like finish that restores both the strength and clarity of your windshield. No removal, no replacement, just a clean repair.</p>
+        </div>
       </div>
-      <span class="sf-link">Learn More</span>
+      <span class="sf-link" onclick="toggleChip(this)">Learn More</span>
     </div>
   </div>
 
@@ -592,6 +601,16 @@ function toggleDark(){
 function toggleMenu(){
   document.getElementById('hamburger').classList.toggle('open');
   document.getElementById('mobile-nav').classList.toggle('open');
+}
+function toggleWindshield(el){
+  const detail = document.getElementById('windshield-detail');
+  const open = detail.classList.toggle('open');
+  el.childNodes[0].textContent = open ? 'Show Less ' : 'Learn More ';
+}
+function toggleChip(el){
+  const detail = document.getElementById('chip-detail');
+  const open = detail.classList.toggle('open');
+  el.childNodes[0].textContent = open ? 'Show Less ' : 'Learn More ';
 }
 function closeMenu(){
   document.getElementById('hamburger').classList.remove('open');
