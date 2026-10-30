@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifetime Warranty — Brothers Auto Glass</title>
+<link rel="icon" type="image/svg+xml" href="Logo Icon Orange.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>if(localStorage.getItem('darkMode')==='on')document.body.classList.add('dark');</script>
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;line-height:1;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+/* ── TOP BAR ── */
+.top-bar{background:#0f0f0f;padding:8px 64px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar-left{font-size:12px;color:#666;letter-spacing:.5px;}
+.top-bar-right{display:flex;gap:28px;align-items:center;}
+.top-bar-right a{font-size:12px;color:#555;letter-spacing:.5px;transition:color .2s;}
+.top-bar-right a:hover{color:#e8650a;}
+.top-bar-right span{color:#333;font-size:10px;}
+
+/* ── NAV ── */
+nav{background:#fff;border-bottom:1px solid #ebebeb;padding:0 64px;display:flex;justify-content:space-between;align-items:center;height:76px;position:sticky;top:0;z-index:100;transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{height:42px;width:auto;}
+.nav-logo-text .logo-name{font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1a1a1a;line-height:1;}
+.nav-logo-text .logo-sub{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#bbb;margin-top:4px;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;color:#777;letter-spacing:.3px;transition:color .2s;padding:4px 0;border-bottom:2px solid transparent;}
+.nav-links a:hover{color:#1a1a1a;border-bottom-color:#e8650a;}
+.nav-links a.active{color:#e8650a;font-weight:600;}
+.nav-cta{background:#e8650a;color:#fff;padding:11px 26px;font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5px;border:none;cursor:pointer;border-radius:5px;transition:background .2s;white-space:nowrap;}
+.nav-cta:hover{background:#cf5908;}
+
+/* ── HERO ── */
+.wt-hero{background:#0f0f0f;padding:120px 64px 100px;position:relative;overflow:hidden;}
+.wt-hero-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60vw;max-width:640px;opacity:.03;filter:invert(1);pointer-events:none;}
+.wt-hero-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;text-align:center;}
+.wt-eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:28px;}
+.wt-eyebrow span{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#e8650a;font-weight:600;}
+.wt-eyebrow::before,.wt-eyebrow::after{content:'';display:block;width:32px;height:2px;background:#e8650a;}
+.wt-hero h1{font-family:'Oswald',sans-serif;font-size:68px;font-weight:700;text-transform:uppercase;letter-spacing:-2px;color:#fff;line-height:.95;margin-bottom:24px;}
+.wt-hero h1 em{font-style:normal;color:#e8650a;}
+.wt-hero p{font-size:16px;color:#666;font-weight:300;line-height:1.85;max-width:560px;margin:0 auto;}
+
+/* ── COVERED SECTION ── */
+.wt-covered{padding:96px 64px;}
+.wt-covered-inner{max-width:1000px;margin:0 auto;}
+.sec-ey{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#e8650a;font-weight:600;margin-bottom:16px;}
+.wt-covered h2{font-family:'Oswald',sans-serif;font-size:48px;font-weight:700;text-transform:uppercase;letter-spacing:-1px;color:#1a1a1a;line-height:1.05;margin-bottom:48px;}
+.wt-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e8e8e8;margin-bottom:2px;}
+.wt-item{background:#fff;padding:40px 36px;display:flex;gap:20px;align-items:flex-start;}
+.wt-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.wt-item-body h4{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a;margin-bottom:8px;}
+.wt-item-body p{font-size:14px;color:#777;line-height:1.75;font-weight:300;}
+
+/* ── NOT COVERED ── */
+.wt-not{background:#f6f6f4;padding:80px 64px;}
+.wt-not-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.wt-not h2{font-family:'Oswald',sans-serif;font-size:40px;font-weight:700;text-transform:uppercase;letter-spacing:-1px;color:#1a1a1a;line-height:1.05;margin-bottom:20px;}
+.wt-not p{font-size:15px;color:#777;font-weight:300;line-height:1.85;margin-bottom:16px;}
+.wt-not-box{background:#fff;border:1px solid #e8e8e8;border-radius:6px;padding:32px;border-left:4px solid #e8650a;}
+.wt-not-box h4{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a;margin-bottom:10px;}
+.wt-not-box p{font-size:14px;color:#888;line-height:1.75;font-weight:300;}
+
+/* ── HOW IT WORKS ── */
+.wt-how{padding:80px 64px;border-top:1px solid #ebebeb;}
+.wt-how-inner{max-width:1000px;margin:0 auto;}
+.wt-how h2{font-family:'Oswald',sans-serif;font-size:40px;font-weight:700;text-transform:uppercase;letter-spacing:-1px;color:#1a1a1a;margin-bottom:48px;}
+.wt-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid #ebebeb;}
+.wt-step{padding:36px 32px;border-right:1px solid #ebebeb;}
+.wt-step-n{font-family:'Oswald',sans-serif;font-size:44px;font-weight:700;color:#f0f0f0;line-height:1;margin-bottom:14px;letter-spacing:-1px;}
+.wt-step h4{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a;margin-bottom:8px;}
+.wt-step p{font-size:13px;color:#888;line-height:1.75;font-weight:300;}
+
+/* ── CTA ── */
+.wt-cta{background:#0f0f0f;padding:80px 64px;text-align:center;}
+.wt-cta h2{font-family:'Oswald',sans-serif;font-size:44px;font-weight:700;text-transform:uppercase;letter-spacing:-1px;color:#fff;margin-bottom:14px;}
+.wt-cta p{font-size:15px;color:#555;font-weight:300;margin-bottom:40px;}
+.wt-cta-btn{background:#e8650a;color:#fff;padding:18px 56px;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:5px;transition:all .2s;}
+.wt-cta-btn:hover{background:#cf5908;transform:translateY(-1px);}
+
+/* ── FOOTER ── */
+footer{background:#0a0a0a;padding:72px 64px 32px;}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px;}
+.ft-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.ft-brand img{height:34px;filter:invert(1);}
+.ft-brand-name{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:1.5px;text-transform:uppercase;}
+.ft-desc{font-size:13px;color:#666;line-height:1.85;font-weight:300;max-width:260px;}
+.ft-col h4{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;color:#fff;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;}
+.ft-col a,.ft-col p{display:block;font-size:13px;color:#666;margin-bottom:11px;transition:color .2s;line-height:1.6;}
+.ft-col a:hover{color:#aaa;}
+.ft-col .highlight{color:#e8650a;font-weight:500;}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;}
+.ft-copy{font-size:12px;color:#555;}
+.ft-links{display:flex;gap:20px;}
+.ft-links a{font-size:12px;color:#555;transition:color .2s;}
+.ft-links a:hover{color:#999;}
+
+/* ── DARK MODE TOGGLE ── */
+#dm-toggle{position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;background:rgba(15,15,15,.9);color:#666;border:1px solid rgba(255,255,255,.08);cursor:pointer;transition:all .2s;border-radius:20px;backdrop-filter:blur(8px);}
+#dm-toggle:hover{color:#ccc;border-color:rgba(255,255,255,.2);}
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:3px solid #e8650a;z-index:98;box-shadow:0 8px 32px rgba(0,0,0,.12);}
+.mobile-nav.open{display:block;}
+.mobile-nav ul{list-style:none;padding:8px 0;}
+.mobile-nav ul li{border-bottom:1px solid #f2f2f2;}
+.mobile-nav ul a{display:block;padding:17px 24px;font-size:16px;font-weight:500;color:#333;transition:color .2s;}
+.mobile-nav ul a:hover,.mobile-nav ul a.active{color:#e8650a;font-weight:600;}
+.mobile-nav-cta{display:block;margin:16px 24px 8px;background:#e8650a;color:#fff;padding:15px 24px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border:none;border-radius:5px;cursor:pointer;width:calc(100% - 48px);text-align:center;}
+.mobile-dm{display:block;margin:0 24px 20px;background:none;color:#999;padding:12px 0;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border:none;border-top:1px solid #f0f0f0;cursor:pointer;width:calc(100% - 48px);text-align:center;transition:color .2s;}
+.mobile-dm:hover{color:#1a1a1a;}
+
+/* ── TABLET ── */
+@media(max-width:1024px){
+  .top-bar{padding:8px 32px;}
+  nav{padding:0 32px;}
+  .wt-hero{padding:80px 32px 72px;}
+  .wt-hero h1{font-size:52px;}
+  .wt-covered{padding:72px 32px;}
+  .wt-not{padding:64px 32px;}
+  .wt-not-inner{grid-template-columns:1fr;gap:40px;}
+  .wt-how{padding:64px 32px;}
+  .wt-steps{grid-template-columns:1fr;}
+  .wt-step{border-right:none;border-bottom:1px solid #ebebeb;}
+  .wt-step:last-child{border-bottom:none;}
+  .wt-cta{padding:64px 32px;}
+  footer{padding:56px 32px 28px;}
+  .ft-top{grid-template-columns:1fr 1fr;gap:40px;}
+}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .top-bar{display:none;}
+  nav{padding:0 20px;height:64px;}
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .nav-logo img{height:36px;}
+  .nav-logo-text .logo-sub{display:none;}
+  .nav-logo-text .logo-name{font-size:16px;}
+  .wt-hero{padding:60px 20px 52px;}
+  .wt-hero h1{font-size:40px;letter-spacing:-1px;}
+  .wt-hero p{font-size:14px;}
+  .wt-covered{padding:52px 20px;}
+  .wt-covered h2{font-size:32px;margin-bottom:32px;}
+  .wt-grid{grid-template-columns:1fr;background:none;gap:0;}
+  .wt-item{border-bottom:1px solid #ebebeb;padding:28px 0;}
+  .wt-item:last-child{border-bottom:none;}
+  .wt-not{padding:52px 20px;}
+  .wt-not h2{font-size:30px;}
+  .wt-how{padding:52px 20px;}
+  .wt-how h2{font-size:30px;margin-bottom:32px;}
+  .wt-cta{padding:52px 20px;}
+  .wt-cta h2{font-size:32px;}
+  .wt-cta-btn{padding:16px 36px;font-size:17px;}
+  #dm-toggle{display:none;}
+  footer{padding:48px 20px 24px;}
+  .ft-top{grid-template-columns:1fr;gap:32px;}
+  .ft-bottom{flex-direction:column;gap:10px;text-align:center;}
+}
+
+body.dark .mobile-nav{background:#141414;border-bottom-color:#e8650a;}
+body.dark .mobile-nav ul li{border-color:#222;}
+body.dark .mobile-nav ul a{color:#aaa;}
+body.dark .hamburger span{background:#d8d8d8;}
+body.dark .mobile-dm{color:#666;border-top-color:#222;}
+body.dark .mobile-dm:hover{color:#aaa;}
+
+/* ── DARK MODE ── */
+.logo-dark{display:none;}
+body.dark .logo-light{display:none;}
+body.dark .logo-dark{display:block;}
+body.dark{background:#141414;}
+body.dark nav{background:#141414;border-bottom-color:#222;}
+body.dark .nav-logo-text .logo-name{color:#d8d8d8;}
+body.dark .nav-links a{color:#666;}
+body.dark .nav-links a:hover{color:#d0d0d0;}
+body.dark .wt-covered{background:#141414;}
+body.dark .wt-covered h2{color:#d8d8d8;}
+body.dark .wt-grid{background:#0f0f0f;}
+body.dark .wt-item{background:#141414;}
+body.dark .wt-item-body h4{color:#d0d0d0;}
+body.dark .wt-item-body p{color:#555;}
+body.dark .wt-not{background:#1a1a1a;}
+body.dark .wt-not h2{color:#d8d8d8;}
+body.dark .wt-not p{color:#555;}
+body.dark .wt-not-box{background:#141414;border-color:#222;}
+body.dark .wt-not-box h4{color:#d0d0d0;}
+body.dark .wt-not-box p{color:#555;}
+body.dark .wt-how{border-top-color:#222;}
+body.dark .wt-how h2{color:#d8d8d8;}
+body.dark .wt-step h4{color:#d0d0d0;}
+body.dark .wt-step p{color:#555;}
+body.dark .wt-step{border-color:#222;}
+
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-left">Serving All of Arizona · Mon – Fri 8:00 AM – 5:00 PM</span>
+  <div class="top-bar-right">
+    <a href="tel:4802712014">(480) 271-2014</a>
+    <span>|</span>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img class="logo-light" src="Logo Icon Vector.svg" alt="Brothers Auto Glass">
+    <img class="logo-dark" src="Logo Icon Orange.svg" alt="Brothers Auto Glass">
+    <div class="nav-logo-text">
+      <div class="logo-name">Brothers Auto Glass</div>
+      <div class="logo-sub">Licensed · Insured · Guaranteed</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="fleet.html">Fleet</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="window.location.href='contact.html'">(480) 271-2014</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <ul>
+    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+    <li><a href="index.html#services" onclick="closeMenu()">Services</a></li>
+    <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+    <li><a href="reviews.html" onclick="closeMenu()">Reviews</a></li>
+    <li><a href="fleet.html" onclick="closeMenu()">Fleet</a></li>
+    <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <button class="mobile-nav-cta" onclick="window.location.href='contact.html'">(480) 271-2014 — Call Now</button>
+  <button class="mobile-dm" id="mobile-dm" onclick="toggleDark()">◑ Dark Mode</button>
+</div>
+
+<!-- HERO -->
+<section class="wt-hero">
+  <img class="wt-hero-bg" src="Logo Icon Vector.svg" alt="">
+  <div class="wt-hero-inner">
+    <div class="wt-eyebrow"><span>Our Promise</span></div>
+    <h1>Lifetime<br><em>Workmanship</em><br>Warranty.</h1>
+    <p>Every installation we do is backed by a lifetime warranty on our workmanship. If something goes wrong with the way we installed it, we come back and make it right. No charge, no hassle, no fine print.</p>
+  </div>
+</section>
+
+<!-- WHAT'S COVERED -->
+<section class="wt-covered">
+  <div class="wt-covered-inner">
+    <div class="sec-ey">What We Cover</div>
+    <h2>If We Installed It,<br>We Stand Behind It.</h2>
+    <div class="wt-grid">
+      <div class="wt-item">
+        <span class="wt-icon">💧</span>
+        <div class="wt-item-body">
+          <h4>Water Leaks</h4>
+          <p>If your vehicle develops a water leak around the glass we installed, we come out and reseal it at no cost to you.</p>
+        </div>
+      </div>
+      <div class="wt-item">
+        <span class="wt-icon">🔊</span>
+        <div class="wt-item-body">
+          <h4>Wind Noise</h4>
+          <p>Whistling or wind noise coming from the glass after installation is an installation issue. We will fix it, period.</p>
+        </div>
+      </div>
+      <div class="wt-item">
+        <span class="wt-icon">🔍</span>
+        <div class="wt-item-body">
+          <h4>Glass Defects</h4>
+          <p>If there are any defects in the glass we supplied and installed, we replace it without question.</p>
+        </div>
+      </div>
+      <div class="wt-item">
+        <span class="wt-icon">🛠</span>
+        <div class="wt-item-body">
+          <h4>Any Installation-Related Issue</h4>
+          <p>If a problem can be traced back to how we did the job, it is covered. We own our work completely.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S NOT COVERED -->
+<section class="wt-not">
+  <div class="wt-not-inner">
+    <div>
+      <div class="sec-ey">What We Don't Cover</div>
+      <h2>We Are Honest<br>About Our Limits.</h2>
+      <p>Our warranty covers everything related to how we do the job. What we cannot control is what happens to your vehicle after we leave.</p>
+      <p>If a rock flies up and cracks your new windshield on the way home, that is not something our warranty can cover. That is a new incident, the same way a collision would be.</p>
+      <p>For that kind of damage, we are always here to help you get it repaired again quickly and at a fair price.</p>
+    </div>
+    <div class="wt-not-box">
+      <h4>Not Covered by Warranty</h4>
+      <p>New rock chips, cracks, or any damage caused by road debris, impacts, accidents, or anything outside of our original installation. These are new incidents and not related to our workmanship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO CLAIM -->
+<section class="wt-how">
+  <div class="wt-how-inner">
+    <div class="sec-ey">Making a Claim</div>
+    <h2>Simple Process, No Runaround.</h2>
+    <div class="wt-steps">
+      <div class="wt-step">
+        <div class="wt-step-n">01</div>
+        <h4>Give Us a Call</h4>
+        <p>Call us at (480) 271-2014 and let us know what you are experiencing. A real person picks up every time.</p>
+      </div>
+      <div class="wt-step">
+        <div class="wt-step-n">02</div>
+        <h4>We Assess the Issue</h4>
+        <p>We will ask a few quick questions to understand what is going on and confirm it falls under your warranty.</p>
+      </div>
+      <div class="wt-step">
+        <div class="wt-step-n">03</div>
+        <h4>We Come to You</h4>
+        <p>We schedule a time that works for you, come out, and take care of it. No charge, no argument.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="wt-cta">
+  <h2>Questions About Your Warranty?</h2>
+  <p>We are always happy to talk through what is and is not covered. Give us a call.</p>
+  <button class="wt-cta-btn" onclick="window.location.href='contact.html'">Call Us Now &nbsp;→</button>
+</div>
+
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand">
+        <img src="Logo Icon Vector.svg" alt="">
+        <span class="ft-brand-name">Brothers Auto Glass</span>
+      </div>
+      <p class="ft-desc">Family-owned and operated since 2021. Serving all of Arizona with mobile auto glass replacement and repair.</p>
+    </div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <a href="index.html#services">Windshield Replacement</a>
+      <a href="index.html#services">Rock Chip Repair</a>
+      <a href="index.html#services">Side &amp; Rear Windows</a>
+      <a href="index.html#services">ADAS Recalibration</a>
+      <a href="index.html#services">Mobile Service</a>
+      <a href="fleet.html">Fleet Work</a>
+    </div>
+    <div class="ft-col">
+      <h4>Company</h4>
+      <a href="index.html#about">About Us</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="warranty.html">Warranty</a>
+      <a href="fleet.html">Fleet Accounts</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <a href="tel:4802712014" class="highlight">(480) 271-2014</a>
+      <p>Mon – Fri: 8:00 AM – 5:00 PM</p>
+      <p>Mobile Service · Arizona Wide</p>
+      <p style="margin-top:16px;color:#333;font-size:12px;">Licensed · Insured · Guaranteed</p>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2026 Brothers Auto Glass · All Rights Reserved</p>
+    <div class="ft-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<button id="dm-toggle" onclick="toggleDark()">◑ Dark Mode</button>
+
+<script>
+(function(){
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY > 20); });
+  const isDark = localStorage.getItem('darkMode')==='on';
+  if(isDark) document.body.classList.add('dark');
+  const label = isDark ? '○ Light Mode' : '◑ Dark Mode';
+  const btn = document.getElementById('dm-toggle');
+  if(btn) btn.textContent = label;
+  const mbtn = document.getElementById('mobile-dm');
+  if(mbtn) mbtn.textContent = label;
+})();
+function toggleDark(){
+  const on = document.body.classList.toggle('dark');
+  const label = on ? '○ Light Mode' : '◑ Dark Mode';
+  const btn = document.getElementById('dm-toggle');
+  if(btn) btn.textContent = label;
+  const mbtn = document.getElementById('mobile-dm');
+  if(mbtn) mbtn.textContent = label;
+  localStorage.setItem('darkMode', on ? 'on' : 'off');
+}
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-nav').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobile-nav').classList.remove('open');
+}
+</script>
+</body>
+</html>
